@@ -3,26 +3,21 @@
         $scope.grid = [];
         $scope.isPlaying = false;
         $scope.selectedGame = "";
-        loadPlayerSelectGrid();
-
+        $scope.difficulties = ["Easy", "Medium", "Hard"];
+        $scope.players = [
+            { name: 'Eric', type: 'Human', score: 0 },
+            { name: 'Ada', type: 'Computer', score: 0, difficulty: "Easy" }
+        ]; //TODO: Add difficulty to computers
         function loadPlayerSelectGrid() {
             var cells = $('.playerSelectPanel');
-
-            console.log(window.innerHeight);
-            console.log(window.innerWidth);
-
             var min = Math.min(window.innerWidth, window.innerHeight) / 3;
 
             cells.each(function (index, cell) {
                 cell.style.height = min + 'px';
                 cell.style.width = min + 'px';
             });
-        };
+        }; loadPlayerSelectGrid();
         window.onresize = loadPlayerSelectGrid;
-        $scope.players = [
-            { name: 'Eric', type: 'Human', score: 0 },
-            { name: 'Ada', type: 'Computer', score: 0 }
-        ];
 
         $scope.gridSizes = [
             { size: 5, description: '5x5' },

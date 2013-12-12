@@ -41,33 +41,61 @@
         </div>
 
         <div ng-controller="GameSetupController">
-            <div class="row" ng-hide="playing">
+            <div class="row" ng-hide="isPlaying">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="playerSelectGrid">
                         <div>
                             <div class="playerSelectPanel">
-                                
+                                <img src="/content/images/rainbow.jpg" alt="..." class="img-circle playerIcon">
+                                <div class="name">Name</div>
                             </div>
-                            <div class="playerSelectPanel"></div>
+                            <div class="playerSelectPanel">
+                                <img src="/content/images/rainbow.jpg" alt="..." class="img-circle playerIcon">
+                                <div class="name">Name</div>
+                                <p>
+                                    <button type="button" class="btn btn-primary">Add</button>
+                                    <button type="button" class="btn btn-primary">remove</button>
+                                </p>
+                                <label>Difficulty: {{players[1].difficulty}}</label>
+                                <select class="form-control"
+                                        ng-model="players[1].difficulty" ng-options="difficulty as difficulty for difficulty in difficulties"></select>
+                            </div>
                         </div>
                         <div>
-                            <div class="playerSelectPanel"></div>
-                            <div class="playerSelectPanel"></div>
+                            <div class="playerSelectPanel">
+                                <img src="/content/images/rainbow.jpg" alt="..." class="img-circle playerIcon">
+                                <div class="name">Name</div>
+                                <p>
+                                    <button type="button" class="btn btn-primary">Add</button>
+                                    <button type="button" class="btn btn-primary">remove</button>
+                                </p>
+                                <label>Difficulty: {{players[1].difficulty}}</label>
+                                <select class="form-control"
+                                        ng-model="players[1].difficulty" ng-options="difficulty as difficulty for difficulty in difficulties"></select>
+                            </div>
+                            <div class="playerSelectPanel">
+                                <img src="/content/images/rainbow.jpg" alt="..." class="img-circle playerIcon">
+                                <div class="name">Super Long Name</div>
+                                <p>
+                                    <button type="button" class="btn btn-primary">Add</button>
+                                    <button type="button" class="btn btn-primary">remove</button>
+                                </p>
+                                <label>Difficulty: {{players[1].difficulty}}</label>
+                                <select class="form-control"
+                                        ng-model="players[1].difficulty" ng-options="difficulty as difficulty for difficulty in difficulties"></select>
+                            </div>
                         </div>
 
+                    </div><!--PlayerSelectGrid-->
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 optionsContainer">
+                        <label for="gridSize">Grid Size:</label>
+                        <select id="gridSize" class="gridSize form-control"
+                                ng-model="selectedGridSize" ng-options="gridSize.size as gridSize.description for gridSize in gridSizes"></select>
+                        <button type="button" class="btn btn-success playButton"
+                                ng-click="initializeGame('Cardinality', selectedGridSize, selectedGridSize)">
+                            Begin Game
+                        </button>
                     </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-
-                    Grid Size:
-                    <select class="form-control"
-                            ng-model="selectedGridSize" ng-options="gridSize.size as gridSize.description for gridSize in gridSizes"></select>
-
-                    <hr />
-                    <button type="button" class="btn btn-success"
-                            ng-click="initializeGame('Cardinality', selectedGridSize, selectedGridSize)">
-                        Begin Game
-                    </button>
                 </div>
             </div>
 

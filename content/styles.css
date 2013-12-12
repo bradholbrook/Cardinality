@@ -79,14 +79,48 @@ body {
         background-color: #ff8639;
     }
 
-.playerSelectGrid
-{
-    display:table;
-    margin: 0 auto;
+.playerSelectGrid {
+    text-align: center;
 }
-.playerSelectPanel
-{
-    display:inline-block;
-    margin:6px;
-    background-color:orange;
+
+.playerSelectPanel {
+    min-height: 190px;
+    min-width: 190px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 6px;
+    border: 3px solid gray;
+    background-color: #adfcc3;
+}
+
+    .playerSelectPanel > div.name {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    .playerSelectPanel > select {
+        margin-left: 10%;
+        width: 80%;
+    }
+
+.playerIcon {
+    width: 20%;
+    margin-top: 5%;
+    border: 2px solid black;
+    box-shadow: 3px 3px 3px black;
+}
+
+.optionsContainer {
+    text-align: center;
+}
+
+.playButton {
+    width: 60%;
+    height: 50px;
+    margin-top: 15px;
+}
+
+.gridSize {
+    width: 30%;
+    margin-left: 35%;
 }
